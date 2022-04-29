@@ -1,0 +1,25 @@
+.pokemon-list{
+    margin: 0px 6rem;
+    display: flex;
+    flex-wrap: wrap;
+    flex-direction: row;
+
+}
+.pokemon-list-title{
+text-transform: uppercase;
+text-align: center;
+color: rgb(236, 199, 30);
+
+}
+
+.group{
+margin: center;
+    display: grid;
+    grid-template-columns: 1fr 1fr ;
+    padding-bottom: 1em;
+}
+.prev,.nxt{
+    margin: auto;
+    width: 3rem;
+
+}

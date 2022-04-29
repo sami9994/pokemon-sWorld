@@ -1,0 +1,15 @@
+nav{
+
+  background-color: rgb(236, 199, 30);
+    height: 5rem;
+    width: 100%;
+    
+}
+.pokemon-logo{
+    
+    position: absolute;
+    left: 45%;
+    height: auto;
+    width: 10em;
+    
+}

@@ -1,0 +1,50 @@
+.container{
+    position: absolute;
+top: 50%;
+left: 20em;
+transform: translate(0, -50%);
+    margin:auto;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+}
+
+.pokemon-details-img{
+    width: 50%;
+    height: auto;
+    margin: auto;
+   
+}
+.img-group{
+    display: grid;
+    grid-template-rows: 1fr 1fr;
+    
+  
+width: 20rem;
+ height: auto;
+}
+
+.img-group .name{
+    margin-top: 1em;
+    text-align: center;
+    color: rgb(236, 199, 30);
+}
+.titles{
+    margin: auto;
+}
+h4{
+    color:  rgb(236, 199, 30);;
+}
+h4:hover,.name:hover{
+    color:  rgba(236, 199, 30,0.3);
+   cursor: pointer;
+}
+.pokemon-details-img:hover{
+    
+    transform: scale(1.2);
+    
+   
+   transition-delay: 1ms;
+   transition-duration: 2s; 
+   
+   /* transform: rotate(90deg); */
+}

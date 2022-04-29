@@ -1,0 +1,50 @@
+
+.img{
+    margin: auto;
+    width: 80%;
+    height: auto;
+    
+}
+.card{
+    display: grid;
+    grid-template-rows: 2fr 0.5fr ;
+    background-color: rgb(236, 199, 30);
+    width: 15em;
+    height: auto;
+    margin: 1rem 1rem;
+    padding-bottom: 2em;
+    color:white;
+   
+}
+.btn{
+    margin-top: 1em;
+    background-color: aliceblue;
+}
+.card:hover{
+    
+    background-color: rgba(154, 185, 40, 0.1);
+    transition-delay: 1ms;
+    transition-duration: 1s; 
+    color:  rgb(236, 199, 30);
+  
+}
+.btn:hover{
+    transform: scale(1.1);
+    background-color: rgba(105, 116, 68, 0.1);
+    text-transform: uppercase;
+    color: white;
+   
+    background-color:  rgb(236, 199, 30);
+}
+.img:hover{
+    
+    transform: scale(1.2);
+
+
+   transition-delay: 2ms;
+   transition-duration: 2s; 
+   /* transform: rotate(90deg); */
+}
+.card-title{
+    text-transform: uppercase;
+}
