@@ -1,11 +1,10 @@
 .container{
-    position: absolute;
-top: 50%;
-left: 20em;
-transform: translate(0, -50%);
-    margin:auto;
+    /* position: absolute; */
+
+
+    margin: 1em auto;
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-rows: 1fr 1fr;
 }
 
 .pokemon-details-img{
@@ -15,15 +14,14 @@ transform: translate(0, -50%);
    
 }
 .img-group{
-    display: grid;
-    grid-template-rows: 1fr 1fr;
+ margin: auto;
     
   
 width: 20rem;
  height: auto;
 }
 
-.img-group .name{
+.name{
     margin-top: 1em;
     text-align: center;
     color: rgb(236, 199, 30);

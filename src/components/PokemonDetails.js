@@ -36,12 +36,13 @@ const PokemonDetails = () => {
      <div className='img-group'>
      {/* <img src={pokemonData.sprites.front_default} alt={pokemonData.name} className='pokemon-details-img' />
     <img src={pokemonData.sprites.back_default} alt={pokemonData.name} className='pokemon-details-img' /> */}
+  
     <img src={pokemonData.sprites.other.dream_world.front_default} alt={pokemonData.name} className='pokemon-details-img' />
-    <h3 className='name'> Name :{pokemonData.name}</h3>
    
 
      </div>
      <div className='titles'>
+     <h3 className='name'> Name :{pokemonData.name}</h3>
          <h4> Experience:{pokemonData.base_experience}</h4>
          <h4> Height :{pokemonData.height}</h4>
          <h4> Weight :{pokemonData.weight}</h4>
