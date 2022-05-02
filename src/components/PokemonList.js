@@ -8,31 +8,36 @@ import './pokemonlist.css'
 const PokemonList = () => {
   let [next,setNext]=useState('');
   let [prev,setPrev]=useState('');
+  
     let [apiUrl,setApiUrl]=useState(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`);
     // console.log(next)
     const [pokemonList,setPokemonList]=useState([]);
+    const [filteredpokemonList,setFilteredPokemonList]=useState([]);
    
-  console.log(next);
-  console.log(prev);
-    async function getDetailedPokemons(arr) {
-     
-               try {
-                arr.forEach( async(Element)=>{
-                   let res =  await axios(Element.url)
-                   let data= await res.data;
-                   
-                   setPokemonList(prev=>[data,...prev]);
  
-
-                 })
-                
-              
-                
-               } catch (error) {
+    async function getDetailedPokemons(arr) {
+  try {
+                arr.forEach( async(Element)=>{
+                    let res =  await axios(Element.url)
+                    let data= await res.data;
+                    setPokemonList(prev=>[data,...prev]);
+            })
+            } catch (error) {
                  
                }
    }
-  
+    const  handleInputChange = (event) =>{
+       
+     
+
+ 
+    setFilteredPokemonList( pokemonList.filter((e,i)=>e.name.indexOf(event.target.value)!==-1))
+    console.log(filteredpokemonList)
+          
+
+        
+       
+        }
    useEffect(()=>{
     async function getMainPokemonList(url){
       try {
@@ -42,7 +47,7 @@ const PokemonList = () => {
         // // let prev = await result.data.previous;
         setNext(result.data.next)
         setPrev(result.data.previous)
-   
+      
     
      getDetailedPokemons(data)
       } catch (error) {
@@ -51,10 +56,16 @@ const PokemonList = () => {
     }
     getMainPokemonList(apiUrl)
    },[apiUrl])
+    
+         
+    
+    let oPokemons =  pokemonList.map((e,i)=> <PokemonCard key={i} {...e}/>)
+    let fPokemons =  filteredpokemonList.map((e,i)=> <PokemonCard key={i} {...e}/>)
     return (
     
     <div>
         <h1 className='pokemon-list-title'>pokemon List</h1>
+        <input  type='text'  className='search-input' onChange={(e)=>handleInputChange(e)} /> 
         <div  className='group'>
         {(prev==null)?<></>:<button type="button" className="nxt btn btn-outline-warning " onClick={()=>setApiUrl(prev)}><FontAwesomeIcon icon={faBackwardFast} /></button>}
         <button type="button" className="prev btn btn-outline-warning " onClick={()=>setApiUrl(next)}><FontAwesomeIcon  icon={faForwardFast} /></button>
@@ -62,12 +73,7 @@ const PokemonList = () => {
         </div>
         <div className='pokemon-list'>
         {
-        pokemonList.map((e,i)=>{
-             
-          return <PokemonCard key={i} {...e}/>
-            
-          
-        })
+         (fPokemons.length===0)?oPokemons:fPokemons
         }
         </div>
        

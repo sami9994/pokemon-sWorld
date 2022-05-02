@@ -5,6 +5,25 @@
     flex-direction: row;
 
 }
+.search-input {
+display: block;
+margin-left: auto;
+margin-right: auto;
+color:  rgb(236, 199, 30);
+border-top: none;
+border-left: none;
+border-right: none;
+border-color:rgb(236, 199, 30) ;
+text-align: center;
+
+font-size: small;
+width: 15em;
+}
+
+.search-input:hover {
+    cursor: pointer;
+}
+
 .pokemon-list-title{
 text-transform: uppercase;
 text-align: center;
