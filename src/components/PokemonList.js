@@ -4,7 +4,7 @@ import PokemonCard from './PokemonCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBackwardFast, faForwardFast} from '@fortawesome/free-solid-svg-icons';
 import './pokemonlist.css'
-
+import ReactPaginate from 'react-paginate';
 const PokemonList = () => {
   let [next,setNext]=useState('');
   let [prev,setPrev]=useState('');
@@ -13,7 +13,9 @@ const PokemonList = () => {
     // console.log(next)
     const [pokemonList,setPokemonList]=useState([]);
     const [filteredpokemonList,setFilteredPokemonList]=useState([]);
-   
+   const [offset, setOffset] = useState(0);
+const [perPage] = useState(10);
+const [pageCount, setPageCount] = useState(0)
  
     async function getDetailedPokemons(arr) {
   try {
@@ -38,13 +40,11 @@ const PokemonList = () => {
         
        
         }
-   useEffect(()=>{
-    async function getMainPokemonList(url){
+            async function getMainPokemonList(url){
       try {
         let result = await axios.get(url);
         let data = await result.data.results;
-        // let nxt = await result.data.next;
-        // // let prev = await result.data.previous;
+      
         setNext(result.data.next)
         setPrev(result.data.previous)
       
@@ -54,11 +54,20 @@ const PokemonList = () => {
         console.log('Error ',error)
       }
     }
+   useEffect(()=>{
+
     getMainPokemonList(apiUrl)
+    setOffset(pokemonList.length)
    },[apiUrl])
     
          
-    
+    const getP=()=>{
+      setPokemonList(prev=>[...pokemonList.slice(20)]);
+      if(pokemonList.length===0){
+ getMainPokemonList(apiUrl)
+      }
+      //  setApiUrl(prev)
+    }
     let oPokemons =  pokemonList.map((e,i)=> <PokemonCard key={i} {...e}/>)
     let fPokemons =  filteredpokemonList.map((e,i)=> <PokemonCard key={i} {...e}/>)
     return (
@@ -67,7 +76,7 @@ const PokemonList = () => {
         <h1 className='pokemon-list-title'>pokemon List</h1>
         <input  type='text'  className='search-input' onChange={(e)=>handleInputChange(e)} /> 
         <div  className='group'>
-        {(prev==null)?<></>:<button type="button" className="nxt btn btn-outline-warning " onClick={()=>setApiUrl(prev)}><FontAwesomeIcon icon={faBackwardFast} /></button>}
+        {(prev==null)?<></>:<button type="button" className="nxt btn btn-outline-warning " onClick={()=>getP()}><FontAwesomeIcon icon={faBackwardFast} /></button>}
         <button type="button" className="prev btn btn-outline-warning " onClick={()=>setApiUrl(next)}><FontAwesomeIcon  icon={faForwardFast} /></button>
        
         </div>
@@ -76,7 +85,15 @@ const PokemonList = () => {
          (fPokemons.length===0)?oPokemons:fPokemons
         }
         </div>
-       
+       {/* <ReactPaginate 
+        breakLabel="..."
+        nextLabel="next >"
+        // onPageChange={handlePageClick}
+        pageRangeDisplayed={10}
+         pageCount={oPokemons.length}
+        previousLabel="< previous"
+        renderOnZeroPageCount={null}
+       /> */}
         </div>
   )
 }
