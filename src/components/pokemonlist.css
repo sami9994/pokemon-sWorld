@@ -1,6 +1,6 @@
 .pokemon-list{
     width: 100%;
-    margin: auto;
+    
     display: grid;
     /* flex-wrap: wrap;
     flex-direction: row; */
@@ -9,18 +9,20 @@
 
 }
 .search-input {
+    
 display: block;
-margin-left: auto;
-margin-right: auto;
+margin:1rem auto;
 color:  rgb(236, 199, 30);
 border-top: none;
 border-left: none;
 border-right: none;
-border-color:rgb(236, 199, 30) ;
+
+ border-bottom: 2px dotted;
 text-align: center;
 text-transform: uppercase;
 font-size: normal;
 width: 15em;
+
 }
 
 .search-input:hover {

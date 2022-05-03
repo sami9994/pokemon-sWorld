@@ -70,7 +70,6 @@ const PokemonList = () => {
     return (
     
     <div>
-        <h1 className='pokemon-list-title'>pokemon List</h1>
         <input  type='text'  placeholder='Search Pokemon' className='search-input' onChange={(e)=>handleInputChange(e)} /> 
         <div  className='group'>
         {(prev==null)?<></>:<button type="button" className="nxt btn btn-outline-warning " onClick={()=>getP()}><FontAwesomeIcon icon={faBackwardFast} /></button>}
