@@ -1,0 +1,14 @@
+{
+  "files": {
+    "main.css": "/pokemon-sWorld/static/css/main.efa4830b.css",
+    "main.js": "/pokemon-sWorld/static/js/main.096e48db.js",
+    "static/media/logo.png": "/pokemon-sWorld/static/media/logo.c8e5f5413616d2d8709c.png",
+    "index.html": "/pokemon-sWorld/index.html",
+    "main.efa4830b.css.map": "/pokemon-sWorld/static/css/main.efa4830b.css.map",
+    "main.096e48db.js.map": "/pokemon-sWorld/static/js/main.096e48db.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.efa4830b.css",
+    "static/js/main.096e48db.js"
+  ]
+}
