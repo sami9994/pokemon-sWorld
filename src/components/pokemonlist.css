@@ -1,8 +1,11 @@
 .pokemon-list{
-    margin: 0px 6rem;
-    display: flex;
-    flex-wrap: wrap;
-    flex-direction: row;
+    width: 100%;
+    margin: auto;
+    display: grid;
+    /* flex-wrap: wrap;
+    flex-direction: row; */
+    grid-template-columns:  repeat(5,1fr);
+    
 
 }
 .search-input {
@@ -15,13 +18,14 @@ border-left: none;
 border-right: none;
 border-color:rgb(236, 199, 30) ;
 text-align: center;
-
-font-size: small;
+text-transform: uppercase;
+font-size: normal;
 width: 15em;
 }
 
 .search-input:hover {
     cursor: pointer;
+    
 }
 
 .pokemon-list-title{
@@ -32,13 +36,13 @@ color: rgb(236, 199, 30);
 }
 
 .group{
-margin: center;
-    display: grid;
-    grid-template-columns: 1fr 1fr ;
-    padding-bottom: 1em;
-}
+display: flex;
+    margin:2em auto;
+    
+   width: 40em;
+ }
 .prev,.nxt{
     margin: auto;
-    width: 3rem;
+    width: 4rem;
 
 }

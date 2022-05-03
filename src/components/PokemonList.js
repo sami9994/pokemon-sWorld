@@ -4,7 +4,6 @@ import PokemonCard from './PokemonCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBackwardFast, faForwardFast} from '@fortawesome/free-solid-svg-icons';
 import './pokemonlist.css'
-import ReactPaginate from 'react-paginate';
 const PokemonList = () => {
   let [next,setNext]=useState('');
   let [prev,setPrev]=useState('');
@@ -13,9 +12,7 @@ const PokemonList = () => {
     // console.log(next)
     const [pokemonList,setPokemonList]=useState([]);
     const [filteredpokemonList,setFilteredPokemonList]=useState([]);
-   const [offset, setOffset] = useState(0);
-const [perPage] = useState(10);
-const [pageCount, setPageCount] = useState(0)
+
  
     async function getDetailedPokemons(arr) {
   try {
@@ -57,7 +54,7 @@ const [pageCount, setPageCount] = useState(0)
    useEffect(()=>{
 
     getMainPokemonList(apiUrl)
-    setOffset(pokemonList.length)
+   
    },[apiUrl])
     
          
@@ -66,7 +63,7 @@ const [pageCount, setPageCount] = useState(0)
       if(pokemonList.length===0){
  getMainPokemonList(apiUrl)
       }
-      //  setApiUrl(prev)
+    
     }
     let oPokemons =  pokemonList.map((e,i)=> <PokemonCard key={i} {...e}/>)
     let fPokemons =  filteredpokemonList.map((e,i)=> <PokemonCard key={i} {...e}/>)
@@ -74,10 +71,10 @@ const [pageCount, setPageCount] = useState(0)
     
     <div>
         <h1 className='pokemon-list-title'>pokemon List</h1>
-        <input  type='text'  className='search-input' onChange={(e)=>handleInputChange(e)} /> 
+        <input  type='text'  placeholder='Search Pokemon' className='search-input' onChange={(e)=>handleInputChange(e)} /> 
         <div  className='group'>
         {(prev==null)?<></>:<button type="button" className="nxt btn btn-outline-warning " onClick={()=>getP()}><FontAwesomeIcon icon={faBackwardFast} /></button>}
-        <button type="button" className="prev btn btn-outline-warning " onClick={()=>setApiUrl(next)}><FontAwesomeIcon  icon={faForwardFast} /></button>
+        {(next==null)?<></>:<button type="button" className="prev btn btn-outline-warning " onClick={()=>setApiUrl(next)}><FontAwesomeIcon  icon={faForwardFast} /></button>}
        
         </div>
         <div className='pokemon-list'>
@@ -85,15 +82,7 @@ const [pageCount, setPageCount] = useState(0)
          (fPokemons.length===0)?oPokemons:fPokemons
         }
         </div>
-       {/* <ReactPaginate 
-        breakLabel="..."
-        nextLabel="next >"
-        // onPageChange={handlePageClick}
-        pageRangeDisplayed={10}
-         pageCount={oPokemons.length}
-        previousLabel="< previous"
-        renderOnZeroPageCount={null}
-       /> */}
+ 
         </div>
   )
 }
