@@ -9,6 +9,7 @@ import {
 import PokemonList from './components/PokemonList';
 import PokemonDetails from './components/PokemonDetails.js';
 
+
 function App() {
   return (<>
   <BrowserRouter>

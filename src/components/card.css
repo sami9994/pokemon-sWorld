@@ -184,6 +184,7 @@
 @media  screen and (max-width: 375px) {
     .card{
         display: grid;
+        
         grid-template-rows: 1fr 1fr ;
         background-color: rgb(236, 199, 30);
         width: 7em;

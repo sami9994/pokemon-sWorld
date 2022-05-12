@@ -2,6 +2,7 @@ import { getQueriesForElement } from '@testing-library/react'
 import axios from 'axios'
 import React, { useEffect, useState } from 'react'
 import { useParams } from 'react-router-dom'
+import Loader from './Loader'
 import './pokemondetails.css'
 
 const PokemonDetails = () => {
@@ -30,7 +31,7 @@ const PokemonDetails = () => {
         console.log(pokemonData)
     return (
     (loading)?<>
-    <h1>Loading.....</h1>
+    <Loader/>
     </>:<>
     <div className='container'>
      <div className='img-group'>
