@@ -49,3 +49,224 @@
 .card-title{
     text-transform: capitalize;
 }
+
+
+
+/* @media  screen and (max-width: 820px) {
+  
+   
+}
+
+@media  screen and (max-width: 912px) {
+  
+    
+}
+@media  screen and (max-width: 540px) {
+  
+   
+} */
+
+
+
+@media  screen and (max-width: 540px) {
+    .card{
+        display: grid;
+        grid-template-rows: 1fr 1fr ;
+        background-color: rgb(236, 199, 30);
+        width: 140px;
+        height: 280px;
+        margin: 1rem 1rem;
+        padding-bottom: 2em;
+        color:white;
+        font-size: small;
+       
+    }
+    .card-title{
+        font-size: x-small;
+    }
+    .btn{
+        margin-top: 2px;
+        background-color: aliceblue;
+        font-size: 8px;
+    }
+  
+}
+@media  screen and (max-width: 414px) {
+
+    .card{
+        display: grid;
+        grid-template-rows: 2fr 1fr ;
+        background-color: rgb(236, 199, 30);
+        width: 8em;
+        height: 20em;
+        margin: 1em 1em;
+        padding-bottom: 2em;
+        color:white;
+        font-size: small;
+       
+    }
+     .card-title{
+         font-size: 9px;
+     }
+    .img{
+        margin: auto;
+        width: 5em;
+        height: auto;
+        
+    }
+    .btn{
+        margin-top: 1em;
+        background-color: aliceblue;
+        width: 50px;
+        font-size: 8px;
+    }
+}
+@media  screen and (max-width: 412px) {
+
+    .card{
+        display: grid;
+        grid-template-rows: 2fr 1fr ;
+        background-color: rgb(236, 199, 30);
+        width: 8em;
+        height: 20em;
+        margin: 1em 1em;
+        padding-bottom: 2em;
+        color:white;
+        font-size: small;
+       
+    }
+     .card-title{
+         font-size: small;
+     }
+    .img{
+        margin: auto;
+        width: 5em;
+        height: auto;
+        
+    }
+    .btn{
+        margin-top: 1em;
+        background-color: aliceblue;
+        width: 50px;
+        font-size: 8px;
+    }
+}
+@media  screen and (max-width: 390px) {
+    .card{
+        display: grid;
+        grid-template-rows: 1fr 1fr ;
+        background-color: rgb(236, 199, 30);
+        width: 7em;
+        height: auto;
+        margin: 1rem 1rem;
+        padding-bottom: 2em;
+        color:white;
+        font-size: small;
+       
+    }
+    .card-title{
+        font-size: 10px;
+    }
+    .btn{
+        width: 40px;
+        
+        margin-top: 2px;
+        background-color: aliceblue;
+        font-size: 4px;
+    }
+    .img{
+        margin: auto;
+        width: 3em;
+        height: auto;
+        
+    }
+}
+@media  screen and (max-width: 375px) {
+    .card{
+        display: grid;
+        grid-template-rows: 1fr 1fr ;
+        background-color: rgb(236, 199, 30);
+        width: 7em;
+        height: auto;
+        margin: 1rem 1rem;
+        padding-bottom: 2em;
+        color:white;
+        font-size: small;
+       
+    }
+    .card-title{
+        font-size: 8px;
+    }
+    .btn{
+        width: 40px;
+        
+        margin-top: 2px;
+        background-color: aliceblue;
+        font-size: 4px;
+    }
+    .img{
+        margin: auto;
+        width: 3em;
+        height: auto;
+        
+    }
+}
+@media  screen and (max-width: 360px) {
+    .card{
+        display: grid;
+        grid-template-rows: 1fr 1fr ;
+        background-color: rgb(236, 199, 30);
+        width: 7em;
+        height: auto;
+        margin: 1rem 1rem;
+        padding-bottom: 2em;
+        color:white;
+        font-size: small;
+       
+    }
+    .card-title{
+        font-size: 8px;
+    }
+    .btn{
+        width: 50px;
+        margin-top: 2px;
+        background-color: aliceblue;
+        font-size: 5px;
+    }
+    .img{
+        margin: auto;
+        width: 3em;
+        height: auto;
+        
+    }
+}
+@media  screen and (max-width: 280px) {
+    .card{
+        display: grid;
+        grid-template-rows: 1fr 1fr ;
+        background-color: rgb(236, 199, 30);
+        width: 70px;
+        height: 15em;
+        margin: 1em 1em;
+        padding-bottom: 2em;
+        color:white;
+        font-size: small;
+       
+    }
+     .card-title{
+         font-size: x-small;
+     }
+    .img{
+        margin: auto;
+        width: 40%;
+        height: auto;
+        
+    }
+    .btn{
+        margin-top: 1em;
+        background-color: aliceblue;
+        width: 45px;
+        font-size: 5px ;
+    }
+  
+}

@@ -4,11 +4,12 @@ import PokemonCard from './PokemonCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import { faBackwardFast, faForwardFast} from '@fortawesome/free-solid-svg-icons';
 import './pokemonlist.css'
+const MAIN_URL=`https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`
 const PokemonList = () => {
   let [next,setNext]=useState('');
   let [prev,setPrev]=useState('');
   
-    let [apiUrl,setApiUrl]=useState(`https://pokeapi.co/api/v2/pokemon?offset=0&limit=20`);
+    let [apiUrl,setApiUrl]=useState(MAIN_URL);
     // console.log(next)
     const [pokemonList,setPokemonList]=useState([]);
     const [filteredpokemonList,setFilteredPokemonList]=useState([]);
@@ -61,7 +62,7 @@ const PokemonList = () => {
     const getP=()=>{
       setPokemonList(prev=>[...pokemonList.slice(20)]);
       if(pokemonList.length===0){
- getMainPokemonList(apiUrl)
+ getMainPokemonList(MAIN_URL)
       }
     
     }
@@ -69,10 +70,10 @@ const PokemonList = () => {
     let fPokemons =  filteredpokemonList.map((e,i)=> <PokemonCard key={i} {...e}/>)
     return (
     
-    <div>
+    <div className='main-div'>
         <input  type='text'  placeholder='Search Pokemon' className='search-input' onChange={(e)=>handleInputChange(e)} /> 
         <div  className='group'>
-        {(prev==null)?<></>:<button type="button" className="nxt btn btn-outline-warning " onClick={()=>getP()}><FontAwesomeIcon icon={faBackwardFast} /></button>}
+        {(pokemonList.length===20)?<></>:<button type="button" className="nxt btn btn-outline-warning " onClick={()=>getP()}><FontAwesomeIcon icon={faBackwardFast} /></button>}
         {(next==null)?<></>:<button type="button" className="prev btn btn-outline-warning " onClick={()=>setApiUrl(next)}><FontAwesomeIcon  icon={faForwardFast} /></button>}
        
         </div>

@@ -1,15 +1,103 @@
-nav{
-
-  background-color: rgb(236, 199, 30);
-    height: 5rem;
+.nav{
+    
+    background-color: rgb(236, 199, 30);
     width: 100%;
+    height: 5rem;
     
 }
 .pokemon-logo{
     
-    position: absolute;
-    left: 45%;
+   
+    margin: auto;
     height: auto;
     width: 10em;
     
+}
+
+
+
+@media  screen and (max-width: 360px) {
+  .nav{
+   
+    background-color: rgb(236, 199, 30);
+    width:100%;
+    height: 2rem;
+     
+      
+  }
+  .pokemon-logo{
+    display: block;
+   margin: 0 auto;
+    height: auto;
+    width: 4empx;
+    
+}
+}
+@media  screen and (max-width: 375px) {
+  .nav{
+   
+    background-color: rgb(236, 199, 30);
+    width:100%;
+    height: 2rem;
+     
+      
+  }
+  .pokemon-logo{
+    
+
+    height: auto;
+    width: 5em;
+    
+}
+}
+@media  screen and (max-width: 390px) {
+  .nav{
+   
+    background-color: rgb(236, 199, 30);
+    width:100%;
+    height: 2rem;
+     
+      
+  }
+  .pokemon-logo{
+    margin: auto;
+   
+    height: auto;
+    width: 80px;
+    
+}
+}
+@media  screen and (max-width: 393px) {
+  .nav{
+   
+    background-color: rgb(236, 199, 30);
+    width:100%;
+    height: 2rem;
+     
+      
+  }
+  .pokemon-logo{
+    margin: auto;
+   
+    height: auto;
+    width: 4empx;
+    
+}
+}
+@media  screen and (max-width: 414px) {
+  .nav{
+   
+    background-color: rgb(236, 199, 30);
+    width:100%;
+    height: 2rem;
+     
+      
+  }
+  .pokemon-logo{
+    
+    margin: auto;
+    height: auto;
+    width: 80px;
+    
+}
 }

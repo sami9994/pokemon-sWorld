@@ -6,11 +6,11 @@ import './navbar.css'
 const Navbar = () => {
   return (
  <>
- <nav >
-<Link to='/' >
+ <nav className='nav' >
+
  <img src={logo1} className ='pokemon-logo'/>
 
-</Link>
+
 
  {/* <div>
  <input type='text' />
